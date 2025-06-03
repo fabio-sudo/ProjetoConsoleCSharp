@@ -64,4 +64,17 @@ do
     
 
 } while (opcao != 0);
-    
+
+
+
+//Cria sua branch
+//git checkout -b "Nome da Branch"
+
+
+//Lista as branch e mostra a que você está
+//git branch
+
+//Adiciona Atualizações a sua branch
+//git add .
+//git commit -m "Minha contribuição"
+//git push origin nome-da-sua-branch
