@@ -6,7 +6,7 @@ List<Produto> produtos = new List<Produto>();
 
 //Instacia calsse responsável pela camada de negócios
 ControllerProduto controllerProduto = new ControllerProduto(produtos);
-
+ControllerHotel controllerHotel = new ControllerHotel();
 
 //Menu Principal
 int opcao;
@@ -36,7 +36,7 @@ do
                 controllerProduto.MenuProduto();
                 break;
             case 2:
-                Console.WriteLine("Hotel.");//Realizar Reserva
+                controllerHotel.MenuHotel();
                 break;
             case 3:
                 Console.WriteLine("Hardwares.");//Cadastrar Hardwares 
