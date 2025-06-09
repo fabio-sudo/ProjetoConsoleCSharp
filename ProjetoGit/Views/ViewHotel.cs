@@ -67,7 +67,7 @@ namespace ProjetoGit.Views
 
         private static readonly List<ElementoTela> TelaCheckout =
         [
-            new(2, 10, "Check-out : ")
+            new(2, 11, "Check-out : ")
         ];
 
         private static readonly List<ElementoTela> TelaLista = 
@@ -140,10 +140,15 @@ namespace ProjetoGit.Views
                     DesenhaTela(TelaReserva);
                     break;
                 case 2:
+                    DesenhaTela(TelaDadosReserva);
                     break;
                 case 3:
+                    DesenhaTela(TelaDadosReserva);
+                    DesenhaTela(TelaCheckin, false);
                     break;
                 case 4:
+                    DesenhaTela(TelaDadosReserva);
+                    DesenhaTela(TelaCheckout, false);
                     break;
                 default:
                     break;
@@ -228,9 +233,16 @@ namespace ProjetoGit.Views
                 {
                     ExibirOrientacao("informe o Nº do quarto ou 0 p/ encerrar");
                     Console.SetCursorPosition(2, 11);
+                    Console.Write(new string(' ', 27));
+                    Console.SetCursorPosition(2, 11);
                     quarto = Convert.ToInt32(Console.ReadLine());
                     if (quarto == 0)
                         fl_cancelar = true;
+                    if(quarto>ReservaDAO.ListaQuartos.Count)
+                    {
+                        ExibirMensagem("Número do quarto inválido!");
+                        continue;
+                    }
                     break;
                 }
                 catch 
@@ -273,7 +285,9 @@ namespace ProjetoGit.Views
                 try
                 {
                     ExibirOrientacao("No da Reserva ou 0 p/ encerrar");
+                    Console.SetCursorPosition(15, 4);
                     idReserva = Convert.ToInt32(Console.ReadLine());
+                    break;
                 }
                 catch (Exception)
                 {
@@ -285,27 +299,38 @@ namespace ProjetoGit.Views
 
         public void ExibirDadosReserva(Reserva reserva)
         {
-            Console.SetCursorPosition(14, 6);
+            Console.SetCursorPosition(15, 6);
             Console.Write(reserva.Quarto);
             Console.SetCursorPosition(15, 7);
             if (reserva.NomeDoHospede.Length > 27)
                 Console.Write(reserva.NomeDoHospede[..27]);
             else
                 Console.Write(reserva.NomeDoHospede);
-
+            Console.SetCursorPosition(15,8);
             if (reserva.Telefone.Length > 27)
                 Console.Write(reserva.Telefone[..27]);
             else
                 Console.Write(reserva.Telefone);
+            Console.SetCursorPosition(15, 9);
             if (reserva.Email.Length > 27)
                 Console.Write(reserva.Email[..27]);
             else
                 Console.Write(reserva.Email);
+            Console.SetCursorPosition(15, 10);
+            if (reserva.DataCheckin.HasValue)
+                Console.Write(reserva.DataCheckin.Value.ToShortDateString());
+
+            Console.SetCursorPosition(15, 11);
+            if (reserva.DataCheckout.HasValue)
+                Console.Write(reserva.DataCheckout.Value.ToShortDateString());
 
         }
 
         public void ExibirListaReserva(List<Reserva> reservas)
         {
+            if (reservas == null || reservas.Count == 0)
+                return;
+
             Console.Clear();
             DesenhaTela(TelaLista);
             var linha = 4;
@@ -343,7 +368,7 @@ namespace ProjetoGit.Views
                 else
                     linhaImpressao += "             ";
                 if (reserva.DataCheckout.HasValue)
-                    linhaImpressao += reserva.DataCheckout.Value.ToShortDateString() + "   ";
+                    linhaImpressao += reserva.DataCheckout.Value.ToShortDateString() + " ";
                 else
                     linhaImpressao += "           ";
                 Console.Write(linhaImpressao);
@@ -444,29 +469,30 @@ namespace ProjetoGit.Views
         
         private void CriarListaQuartos()
         {
-            while (true)
-            {
-                try
-                {
-                    LimparLinha();
-                    Console.SetCursorPosition(2, linOpcao);
-                    Console.Write("No. de Quartos Disponíveis: ");
-                    var qtdQuartos = Convert.ToInt32(Console.ReadLine());
-                    if (qtdQuartos <= 0)
-                    {
-                        ExibirMensagem("Número inválido!");
-                        continue;
-                    }
-                    ReservaDAO.CriarListaQuartos(qtdQuartos);
-                    break;
-                }
-                catch (Exception)
-                {
-                    ExibirMensagem("Número inválido!");
-                }
-            }
+            ReservaDAO.CriarListaQuartos(10);
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        LimparLinha();
+            //        Console.SetCursorPosition(2, linOpcao);
+            //        Console.Write("No. de Quartos Disponíveis: ");
+            //        var qtdQuartos = Convert.ToInt32(Console.ReadLine());
+            //        if (qtdQuartos <= 0)
+            //        {
+            //            ExibirMensagem("Número inválido!");
+            //            continue;
+            //        }
+            //        ReservaDAO.CriarListaQuartos(qtdQuartos);
+            //        break;
+            //    }
+            //    catch (Exception)
+            //    {
+            //        ExibirMensagem("Número inválido!");
+            //    }
+            //}
         }
-        
+
         public void ExibirMensagem(string mensagem)
         {
             LimparLinha();

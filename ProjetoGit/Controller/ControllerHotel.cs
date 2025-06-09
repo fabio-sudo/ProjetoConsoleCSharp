@@ -33,10 +33,13 @@ namespace ProjetoGit.Controller
                         EfetuarReserva();
                         break;
                     case 2:
+                        CancelarReserva();
                         break;
                     case 3:
+                        EfetuarCheckin();
                         break;
                     case 4:
+                        EfetuarCheckout();
                         break;
                     case 5:
                         viewHotel.ExibirListaReserva(ListaReservas);
@@ -139,6 +142,88 @@ namespace ProjetoGit.Controller
                 viewHotel.ExibirMensagem(ex.Message);
             }
         }
-    
+
+        public void CancelarReserva()
+        {
+            int IdReserva = viewHotel.GetReserva();
+            if (IdReserva == 0)
+            {
+                return;
+            }
+            Reserva? reserva = ListaReservas.FirstOrDefault(r=> r.Id == IdReserva);
+            if (reserva == null)
+            {
+                viewHotel.ExibirMensagem($"Reserva Nº {reserva.Id} NÃO encontrada!");
+                return;
+            }
+            viewHotel.ExibirDadosReserva( reserva );
+            bool Confirma = viewHotel.ConfirmaDados("Confirmar concelamento (s/n)");
+            if (!Confirma)
+            {
+                return;
+            }
+            ListaReservas.Remove( reserva );
+            ReservaDAO.SalvarReservas(ListaReservas);
+            ReservaDAO.AlteraStatusQuarto(reserva.Quarto,(short)0);
+            viewHotel.ExibirMensagem($"Reserva Nº {reserva.Id} CANCELADA!");
+        }
+
+        public void EfetuarCheckin()
+        {
+            int IdReserva = viewHotel.GetReserva();
+            if (IdReserva == 0)
+            {
+                return;
+            }
+            Reserva? reserva = ListaReservas.FirstOrDefault(r => r.Id == IdReserva);
+            if (reserva == null)
+            {
+                viewHotel.ExibirMensagem($"Reserva Nº {reserva.Id} NÃO encontrada!");
+                return;
+            }
+            reserva.DataCheckin = DateTime.Now;
+            viewHotel.ExibirDadosReserva(reserva);
+            bool Confirma = viewHotel.ConfirmaDados("Confirmar checkin (s/n)");
+            if (!Confirma)
+            {
+                return;
+            }
+            
+            ListaReservas.Remove(reserva);
+            ListaReservas.Add(reserva);
+
+            ReservaDAO.SalvarReservas(ListaReservas);
+            ReservaDAO.AlteraStatusQuarto(reserva.Quarto, (short)2);
+            viewHotel.ExibirMensagem($"Checkin realizado!");
+        }
+
+        public void EfetuarCheckout()
+        {
+            int IdReserva = viewHotel.GetReserva();
+            if (IdReserva == 0)
+            {
+                return;
+            }
+            Reserva? reserva = ListaReservas.FirstOrDefault(r => r.Id == IdReserva);
+            if (reserva == null)
+            {
+                viewHotel.ExibirMensagem($"Reserva Nº {reserva.Id} NÃO encontrada!");
+                return;
+            }
+            reserva.DataCheckout = DateTime.Now;
+            viewHotel.ExibirDadosReserva(reserva);
+            bool Confirma = viewHotel.ConfirmaDados("Confirmar checkout (s/n)");
+            if (!Confirma)
+            {
+                return;
+            }
+
+            ListaReservas.Remove(reserva);
+            ListaReservas.Add(reserva);
+
+            ReservaDAO.SalvarReservas(ListaReservas);
+            ReservaDAO.AlteraStatusQuarto(reserva.Quarto, (short)0);
+            viewHotel.ExibirMensagem($"Checkout realizado!");
+        }
     }
 }
