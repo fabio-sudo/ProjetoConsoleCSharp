@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 3,
+    "NomeDoHospede": "Leonardo",
+    "Telefone": "111111111",
+    "Email": "",
+    "Quarto": 1,
+    "DataCheckin": "2025-06-09T19:42:30.4586967-03:00",
+    "DataCheckout": null
+  },
+  {
+    "Id": 4,
+    "NomeDoHospede": "Andre Filho",
+    "Telefone": "11111111",
+    "Email": "",
+    "Quarto": 4,
+    "DataCheckin": null,
+    "DataCheckout": null
+  },
+  {
+    "Id": 2,
+    "NomeDoHospede": "claudio",
+    "Telefone": "11111111",
+    "Email": "",
+    "Quarto": 2,
+    "DataCheckin": "2025-06-09T19:35:36.5595162-03:00",
+    "DataCheckout": "2025-06-09T20:07:51.2817804-03:00"
+  }
+]
