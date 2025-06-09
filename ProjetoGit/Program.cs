@@ -3,10 +3,17 @@ using ProjetoGit.Model;
 
 //Cria tipo lista
 List<Produto> produtos = new List<Produto>();
+List<Agenda> agendas = new List<Agenda>();
+List<Hardware> hardwares = new List<Hardware>();
+
+
+
 
 //Instacia calsse responsável pela camada de negócios
 ControllerProduto controllerProduto = new ControllerProduto(produtos);
 ControllerHotel controllerHotel = new ControllerHotel();
+ControllerHardware controllerHardware = new ControllerHardware(hardwares);
+ControllerAgenda controllerAgenda = new ControllerAgenda(agendas);
 
 //Menu Principal
 int opcao;
@@ -17,7 +24,7 @@ do
     Console.WriteLine("===== MENU PRINCIPAL =====");
     Console.WriteLine("| 1 - Produtos           |");
     Console.WriteLine("| 2 - Hotel              |");
-    Console.WriteLine("| 3 - Estacionamento     |");
+    Console.WriteLine("| 3 - Hardware           |");
     Console.WriteLine("| 4 - Agenda             |");
     Console.WriteLine("| 5 - Softwares          |");
     Console.WriteLine("| 0 - Sair               |");
@@ -40,12 +47,24 @@ do
                 break;
             case 3:
                 Console.WriteLine("Hardwares.");//Cadastrar Hardwares 
+                //Limpa console
+                Console.Clear();
+                //Chama a o método pricipal da classe ProdutoController
+                controllerHardware.MenuHardware();
                 break;
             case 4:
                 Console.WriteLine("Agenda.");//Agenda Data
+                                             //Limpa console
+                Console.Clear();
+                //Chama a o método pricipal da classe ProdutoController
+                controllerAgenda.MenuAgenda();
                 break;
             case 5:
-                Console.WriteLine("Softwares");//Cadastrar Softwares 
+                Console.WriteLine("Softwares");//Cadastrar Softwares
+                //Limpa console
+                Console.Clear();
+                //Chama a o método pricipal da classe ProdutoController
+                //controllerSoftware.MenuSoftware();
                 break;
             case 0:
                 Console.WriteLine("Sair");
