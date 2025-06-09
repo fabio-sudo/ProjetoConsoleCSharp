@@ -8,6 +8,8 @@ namespace ProjetoGit.Model
 {
     public class Hardware
     {
+        private string? id;
+
         //Encapsulamento
         public int Id { get; set; }
 
@@ -32,5 +34,6 @@ namespace ProjetoGit.Model
             Preco = preco;
 
         }
+
     }
 }
