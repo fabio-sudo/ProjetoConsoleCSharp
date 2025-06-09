@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\ProjetoConsoleCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|c:\\users\\admin\\desktop\\projetoconsolecsharp\\projetogit\\controller\\controllerproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|solutionrelative:projetogit\\controller\\controllerproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|c:\\users\\admin\\desktop\\projetoconsolecsharp\\projetogit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|solutionrelative:projetogit\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|c:\\users\\admin\\desktop\\projetoconsolecsharp\\projetogit\\controller\\controllerproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|solutionrelative:projetogit\\controller\\controllerproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B40B33A4-8660-40AB-B2AE-664F0A2969EA}|ProjetoGit\\ProjetoGit.csproj|c:\\users\\admin\\desktop\\projetoconsolecsharp\\projetogit\\model\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ControllerProduto.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\ProjetoConsoleCSharp\\ProjetoGit\\Controller\\ControllerProduto.cs",
               "RelativeDocumentMoniker": "ProjetoGit\\Controller\\ControllerProduto.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\ProjetoConsoleCSharp\\ProjetoGit\\Controller\\ControllerProduto.cs",
               "RelativeToolTip": "ProjetoGit\\Controller\\ControllerProduto.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwG8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T22:48:13.104Z",
               "EditorCaption": ""
@@ -47,18 +47,17 @@
               "RelativeToolTip": "ProjetoGit\\Model\\Produto.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA1wAoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T22:47:35.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T22:47:35.214Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\ProjetoConsoleCSharp\\ProjetoGit\\Program.cs",
               "RelativeDocumentMoniker": "ProjetoGit\\Program.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\ProjetoConsoleCSharp\\ProjetoGit\\Program.cs",
               "RelativeToolTip": "ProjetoGit\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T22:47:24.62Z",
               "EditorCaption": ""
