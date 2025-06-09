@@ -1,0 +1,23 @@
+﻿Classes
+Reserva
+Quarto
+
+Operações
+1- Reservas
+2- Cancelamentos
+3- Checkin
+4- Ckecout
+5- Listar
+
+Classe Reserva
+Id
+NomeDoHospede
+Telefone
+Email
+Quarto
+DataCheckin
+DataCheckout
+
+Class Quarto
+Id
+Status
