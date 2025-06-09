@@ -64,9 +64,9 @@ do
     {
         Console.WriteLine("Você digitou um texto ou um valor inválido.");
         opcao = 10;//Não cair no if
-        Console.Clear() ;
+        Console.Clear();
     }
-    
+
 
 } while (opcao != 0);
 

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xxVLR7SnYQ0=",
+  "dgSpecHash": "wCnF6B1DEes=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\ProjetoConsoleCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj",
+  "projectFilePath": "C:\\Users\\Vinícius Terra\\OneDrive\\Área de Trabalho\\DEV\\Programas\\C#\\AulasCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrador\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Vinícius Terra\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

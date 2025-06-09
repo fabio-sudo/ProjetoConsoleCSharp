@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrador\\Desktop\\ProjetoConsoleCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj": {}
+    "C:\\Users\\Vinícius Terra\\OneDrive\\Área de Trabalho\\DEV\\Programas\\C#\\AulasCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrador\\Desktop\\ProjetoConsoleCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj": {
+    "C:\\Users\\Vinícius Terra\\OneDrive\\Área de Trabalho\\DEV\\Programas\\C#\\AulasCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\ProjetoConsoleCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj",
+        "projectUniqueName": "C:\\Users\\Vinícius Terra\\OneDrive\\Área de Trabalho\\DEV\\Programas\\C#\\AulasCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj",
         "projectName": "ProjetoGit",
-        "projectPath": "C:\\Users\\Administrador\\Desktop\\ProjetoConsoleCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj",
-        "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrador\\Desktop\\ProjetoConsoleCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\obj\\",
+        "projectPath": "C:\\Users\\Vinícius Terra\\OneDrive\\Área de Trabalho\\DEV\\Programas\\C#\\AulasCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\ProjetoGit.csproj",
+        "packagesPath": "C:\\Users\\Vinícius Terra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Vinícius Terra\\OneDrive\\Área de Trabalho\\DEV\\Programas\\C#\\AulasCSharp\\ProjetoConsoleCSharp\\ProjetoGit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\vs\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Vinícius Terra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

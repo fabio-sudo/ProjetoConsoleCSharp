@@ -15,11 +15,17 @@ namespace ProjetoGit.Model
 
         public string Celular { get; set; }
 
-        public Agenda(int id, string nomePessoa, string celular)
+        public string Endereco { get; set; }
+
+        public string Email { get; set; }
+        
+        public Agenda(int id, string nomePessoa, string celular, string endereco, string email)
         {
             Id = id;
             NomePessoa = nomePessoa;
             Celular = celular;
+            Endereco = endereco;
+            Email = email;
         }
     }
 }

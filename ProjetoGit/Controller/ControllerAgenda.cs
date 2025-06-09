@@ -1,9 +1,13 @@
-﻿using ProjetoGit.Model;
+﻿using Newtonsoft.Json;
+using ProjetoGit.Model;
+
 
 namespace ProjetoGit.Controller
 {
     public class ControllerAgenda
-    {
+    {   
+        private const string CAMINHO_ARQUIVO = @"C:\Users\Vinícius Terra\ProjetoCSharpFeito\ProjetoGit\BancoLocal\agendas.json";
+
         //Lista de agendas
         private List<Agenda> agendas = new List<Agenda>();
         //Indice para cadastro
@@ -79,28 +83,59 @@ namespace ProjetoGit.Controller
             //Numero de Telefone
             Console.Write("Celular: ");
             string celular = Console.ReadLine();
-            
-                proximoId++;
-                Agenda a = new Agenda(proximoId, nomePessoa, celular);
 
-                Console.WriteLine(a.Id);
-                agendas.Add(a);
+            //Endereço
+            Console.Write("Endereço: ");
+            string endereco = Console.ReadLine();
 
-                Console.WriteLine("Agenda cadastrada com sucesso!");
-                Console.ReadKey();
-    
-   
+            //Endereço de E-mail
+            Console.Write("Endereço de E-mail: ");
+            string email = Console.ReadLine();
+
+            proximoId++;
+            Agenda a = new Agenda(proximoId, nomePessoa, celular, endereco, email);
+
+            Console.WriteLine(a.Id);
+            agendas.Add(a);
+
+            Console.WriteLine("Agenda cadastrada com sucesso!");
+  
+
+            string json = JsonConvert.SerializeObject(agendas, Formatting.Indented);
+            File.WriteAllText(CAMINHO_ARQUIVO, json); 
+
+            Console.ReadKey();
+
+
+        }
+        public void CarregarDoArquivo()
+        {
+            if (File.Exists(CAMINHO_ARQUIVO))
+            {
+                string json = File.ReadAllText(CAMINHO_ARQUIVO);
+                var dados = JsonConvert.DeserializeObject<List<Agenda>>(json);
+                if (dados != null)
+                {
+                    agendas = dados;
+                }
+            }
         }
 
         //=================================Exibir as agendas
         public void ListarAgendas()
         {
+
+            var json = File.ReadAllText("C:\\Users\\Vinícius Terra\\ProjetoCSharpFeito\\ProjetoGit\\BancoLocal\\agendas.json");
+            agendas = JsonConvert.DeserializeObject<List<Agenda>>(json);
+
             Console.WriteLine("\n=== Lista de Agendas ===");
             foreach (Agenda a in agendas)
             {
                 Console.WriteLine($"ID: {a.Id}\n" +
                     $"Nome: {a.NomePessoa}\n" +
-                    $"Celular: {a.Celular}\n");
+                    $"Celular: {a.Celular}\n" +
+                    $"Endereço: {a.Endereco}\n" +
+                    $"E-mail: {a.Email}\n");
             }
 
             Console.ReadKey();
