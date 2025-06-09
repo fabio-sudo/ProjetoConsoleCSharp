@@ -3,10 +3,12 @@ using ProjetoGit.Model;
 
 //Cria tipo lista
 List<Produto> produtos = new List<Produto>();
+List<Hardware> hardwares = new List<Hardware>();
+
 
 //Instacia calsse responsável pela camada de negócios
 ControllerProduto controllerProduto = new ControllerProduto(produtos);
-
+ControllerHardware controllerHardware = new ControllerHardware(hardwares);
 
 //Menu Principal
 int opcao;
@@ -40,6 +42,9 @@ do
                 break;
             case 3:
                 Console.WriteLine("Hardwares.");//Cadastrar Hardwares 
+                //Limpa console
+                Console.Clear();
+                controllerHardware.MenuHardware();
                 break;
             case 4:
                 Console.WriteLine("Agenda.");//Agenda Data
