@@ -2,24 +2,25 @@
 
 namespace ProjetoGit.Controller
 {
-    public class ControllerProduto
+    public class ControllerAgenda
     {
-        //Lista de produtos
-        private List<Produto> produtos = new List<Produto>();
+        //Lista de agendas
+        private List<Agenda> agendas = new List<Agenda>();
         //Indice para cadastro
         private int proximoId = 0;
         //Opção do menu
         private int opcao;
 
 
-        //Construtor recebe lista de produtos -> Fica na memória
-        public ControllerProduto(List<Produto> produtosLista) {
-        
-            produtos = produtosLista;
+        //Construtor recebe lista de agendas -> Fica na memória
+        public ControllerAgenda(List<Agenda> agendasLista)
+        {
+
+            agendas = agendasLista;
         }
 
         //================================Menu de Opções
-        public void MenuProduto()
+        public void MenuAgenda()
         {
             //Inicializar variavel opções
             opcao = 0;
@@ -27,7 +28,7 @@ namespace ProjetoGit.Controller
             while (opcao != 3)
             {
 
-                Console.WriteLine("===== Produto =============");
+                Console.WriteLine("===== Agenda =============");
                 Console.WriteLine("| 1 - Cadastrar           |");
                 Console.WriteLine("| 2 - Listar              |");
                 Console.WriteLine("| 3 - Sair                |");
@@ -38,12 +39,12 @@ namespace ProjetoGit.Controller
                     switch (opcao)
                     {
                         case 1:
-                            CadastrarProduto();
+                            CadastrarAgenda();
                             Console.Clear();
                             break;
 
                         case 2:
-                            ListarProdutos();
+                            ListarAgendas();
                             Console.Clear();
                             break;
 
@@ -61,49 +62,45 @@ namespace ProjetoGit.Controller
             }
         }
 
-        //=================================Adicionar Produtos
-        public void CadastrarProduto()
+        //=================================Adicionar Agendas
+        public void CadastrarAgenda()
         {
-            //Caso ja houver produtos na lista pega o ultimo ID
-            if (produtos.Count > 0)
+            //Caso ja houver agendas na lista pega o ultimo ID
+            if (agendas.Count > 0)
             {
-                proximoId = produtos.Max(x => x.Id);
+                proximoId = agendas.Max(x => x.Id);
             }
 
 
-            //Nome
-            Console.Write("Nome do produto: ");
-            string nome = Console.ReadLine();
+            //Nome Pessoa
+            Console.Write("Nome da Pessoa: ");
+            string nomePessoa = Console.ReadLine();
 
-            //Preço
-            Console.Write("Preço do produto: ");
-            if (decimal.TryParse(Console.ReadLine(), out decimal preco))
-            {
+            //Numero de Telefone
+            Console.Write("Celular: ");
+            string celular = Console.ReadLine();
+            
                 proximoId++;
-                Produto p = new Produto(proximoId, nome, preco);
+                Agenda a = new Agenda(proximoId, nomePessoa, celular);
 
-                Console.WriteLine(p.Id);
-                produtos.Add(p);
+                Console.WriteLine(a.Id);
+                agendas.Add(a);
 
-                Console.WriteLine("Produto cadastrado com sucesso!");
+                Console.WriteLine("Agenda cadastrada com sucesso!");
                 Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Preço inválido.");
-            }
-
+    
+   
         }
 
-        //=================================Exibir os produtos
-        public void ListarProdutos()
+        //=================================Exibir as agendas
+        public void ListarAgendas()
         {
-            Console.WriteLine("\n=== Lista de Produtos ===");
-            foreach (Produto p in produtos)
+            Console.WriteLine("\n=== Lista de Agendas ===");
+            foreach (Agenda a in agendas)
             {
-                Console.WriteLine($"ID: {p.Id}\n"+
-                    $"Descrição: {p.Descricao}\n" +
-                    $"Preço: {p.Valor:C}\n");
+                Console.WriteLine($"ID: {a.Id}\n" +
+                    $"Nome: {a.NomePessoa}\n" +
+                    $"Celular: {a.Celular}\n");
             }
 
             Console.ReadKey();

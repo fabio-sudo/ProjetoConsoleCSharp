@@ -3,9 +3,11 @@ using ProjetoGit.Model;
 
 //Cria tipo lista
 List<Produto> produtos = new List<Produto>();
+List<Agenda> agendas = new List<Agenda>();
 
 //Instacia calsse responsável pela camada de negócios
 ControllerProduto controllerProduto = new ControllerProduto(produtos);
+ControllerAgenda controllerAgenda = new ControllerAgenda(agendas);
 
 
 //Menu Principal
@@ -17,7 +19,7 @@ do
     Console.WriteLine("===== MENU PRINCIPAL =====");
     Console.WriteLine("| 1 - Produtos           |");
     Console.WriteLine("| 2 - Hotel              |");
-    Console.WriteLine("| 3 - Estacionamento     |");
+    Console.WriteLine("| 3 - Hardware           |");
     Console.WriteLine("| 4 - Agenda             |");
     Console.WriteLine("| 5 - Softwares          |");
     Console.WriteLine("| 0 - Sair               |");
@@ -42,7 +44,10 @@ do
                 Console.WriteLine("Hardwares.");//Cadastrar Hardwares 
                 break;
             case 4:
-                Console.WriteLine("Agenda.");//Agenda Data
+                //Limpa console
+                Console.Clear();
+                //Chama a o método pricipal da classe ProdutoController
+                controllerAgenda.MenuAgenda();
                 break;
             case 5:
                 Console.WriteLine("Softwares");//Cadastrar Softwares 
